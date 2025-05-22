@@ -1,29 +1,27 @@
 # Assignment 1
 
-You will only need one file, ie, your node module, for this assignment.
+This is my node.js module with reference to Shoppee an e-commerce website where users can buy things and some of my function includes adding items to shopping carts, tallying up the price of my shopping cart, applying vouchers, deleting items and clearing my shopping cart
 
-In this readme file, describe how to use your node module. It could be similar to **app.js** from Lab2, where you call some functions in your node module and display the output. Describe how to setup your node module, if any. Describe how to call the functions, what parameters required and so on.
-
-You can press **Ctrl+Shift+V** in this file in Visual Studio Code to see a live preview of the readme file.
-
+# usage
 const orderProcess = require('./DylanChan_WAD.js');
 
-//add items to my shopping cart by id using the .find function and pushing the 
-//object into the shopping cart array while also changing the quantity in the inventory
-console.log(orderProcess.addOrderByID(4,2));
-console.log(orderProcess.addOrderByID(5,3));
+```javascript
+const orderProcess = require('./DylanChan_WAD.js');
 
-//by going through the entire shopping cart using the foreach function it helps me to add all of the value
+// Add items to shopping cart by ID and update inventory quantity
+console.log(orderProcess.addOrderByID(4, 2));
+console.log(orderProcess.addOrderByID(5, 3));
+
+// Calculate total price of items in the cart
 console.log("Total Price: $" + orderProcess.calculateTotalPrice());
 
-//by using a .find function to find the voucher through the array and 
-// subtracting the voucher we can find how much it is after the coucher is used
+// Apply voucher code to get a discount
 console.log(orderProcess.applyVoucher('TIMMY20OFF'));
 
-//using .findIndex to find the item's position in the array and using .splice to remove the item we can delete a specific item
-console.log("Deleted: " +orderProcess.deleteOrderByID(4));
+// Delete a specific item from the cart by ID
+console.log("Deleted: " + orderProcess.deleteOrderByID(4));
 
-//by using .foreach we can pass through the shopping cart and empty it out while replacing the stock numbers
+// Clear the cart and restock the items
 console.log(orderProcess.clearCart());
 
 # References

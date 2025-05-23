@@ -113,8 +113,6 @@ let voucherCode = [
             return "Cannot apply voucher: your cart is empty.";
         }
 
-
-
         // check minSpend
         if (voucher.minSpend !== null && total < voucher.minSpend) {
             return `You must spend at least $${voucher.minSpend.toFixed(2)} to use this voucher.`;
